@@ -1,5 +1,40 @@
-# 2.3 JPA with MongoDB
-Create a Spring Boot Application that connects with MongoDB.
+# LAB9-IETI
+# Autor
+   * [Fernando Barrera Barrera](https://github.com/fernando-b15) :guitar:   
+# Preguntas   
+   * ¿Cuántos clientes se crearon en la base de datos?\
+     Se crearon 5 customers en la base de datos
+   * ¿Dónde se implementa el método findAll?\
+     Este metodo esta implmenetado en el MongoRepository 
+   * Suponga que tiene más de 1000 productos en su base de datos. ¿Cómo implementaría un método para respaldar la paginación y devolver páginas de 50 productos a su interfaz?\
+      Usaria el metodo PageRequest.of y dado que necesitariamos los primeros 50 productos seria productRepository.findBy(PageRequest.of(0,50))
+   * ¿Cuántos productos contienen la palabra "plus" en su descripción?\
+      Hay 4 productos en la base de datos que en su descripcion contiene la palablar plus
+   * ¿Cuántos productos devuelve la consulta findByDescriptionContaining? ¿Por qué?\
+      Devuelve solo 2 productos pero en realidad el total de productos en la base de datos que tiene la palabra plus son 4 pero el metodo tambien recibe un parametro de pegeable en el que se  especifica que solo devuelva los dos primeros productos con la palabra plus
+   * ¿Cuáles son los nombres de las colecciones donde se almacenan los objetos? ¿Dónde se asignan esos nombres?\
+    Inicialmente si no se  especifican los nombres de los documentos estos toman el mismo nombre de la clase entidad que los referencia pero si quisieramos asignarle un nombre distinto al documento se hace mediante la siguiente instruccion @Document(collection = "nombre diferente al de la clase")
+# Queries   
+
+## Queries con Criteria
+   * Query 1\
+   ![img1](https://github.com/fernando-b15/LAB9-IETI/blob/master/img/test1.PNG)
+   * Query 2\
+   ![img2](https://github.com/fernando-b15/LAB9-IETI/blob/master/img/test2.PNG)
+   * Query 3\
+    ![img3](https://github.com/fernando-b15/LAB9-IETI/blob/master/img/test3.PNG)
+   * Query 4\
+   ![img4](https://github.com/fernando-b15/LAB9-IETI/blob/master/img/test4.PNG)
+
+## Queries con Metodos MongoRepository 
+   * Query 1\
+    ![img5](https://github.com/fernando-b15/LAB9-IETI/blob/master/img/test5.PNG)
+   * Query 2\
+    ![img6](https://github.com/fernando-b15/LAB9-IETI/blob/master/img/test6.PNG)
+   * Query 3\
+    ![img7](https://github.com/fernando-b15/LAB9-IETI/blob/master/img/test7.PNG)
+   * Query 4\
+    ![img8](https://github.com/fernando-b15/LAB9-IETI/blob/master/img/test8.PNG)
 
 ## Part 1: Basic Mongo DB configuration and Spring Boot Integration
 1. Create a MongoDB Atlas account on [https://www.mongodb.com/atlas-signup-from-mlab](https://www.mongodb.com/atlas-signup-from-mlab):
