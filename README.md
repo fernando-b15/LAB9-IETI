@@ -5,11 +5,11 @@
    * ¿Cuántos clientes se crearon en la base de datos?\
      Se crearon 5 customers en la base de datos
    * ¿Dónde se implementa el método findAll?\
-     Este metodo esta implmenetado en el MongoRepository 
+     Este metodo esta implmentado en el MongoRepository 
    * Suponga que tiene más de 1000 productos en su base de datos. ¿Cómo implementaría un método para respaldar la paginación y devolver páginas de 50 productos a su interfaz?\
       Usaria el metodo PageRequest.of y dado que necesitariamos los primeros 50 productos seria productRepository.findBy(PageRequest.of(0,50))
    * ¿Cuántos productos contienen la palabra "plus" en su descripción?\
-      Hay 4 productos en la base de datos que en su descripcion contiene la palablar plus
+      Hay 4 productos en la base de datos que en su descripcion contiene la palablara plus
    * ¿Cuántos productos devuelve la consulta findByDescriptionContaining? ¿Por qué?\
       Devuelve solo 2 productos pero en realidad el total de productos en la base de datos que tiene la palabra plus son 4 pero el metodo tambien recibe un parametro de pegeable en el que se  especifica que solo devuelva los dos primeros productos con la palabra plus
    * ¿Cuáles son los nombres de las colecciones donde se almacenan los objetos? ¿Dónde se asignan esos nombres?\
